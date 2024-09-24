@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { RxCross2 } from "react-icons/rx";
 import { HiBars3 } from "react-icons/hi2";
 import { gsap } from 'gsap';
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 
 function Header() {
     const [menuBar, setMenuBar] = useState(false);
     const [isClassesHovered, setIsClassesHovered] = useState(false);
+    const navigate = useNavigate();
+
+    function handleLogoclick(){{
+        navigate('/home')
+    }}
 
     const navItems = [
         { label: 'Home', link: '/home' },
@@ -67,10 +72,10 @@ function Header() {
     }, [menuBar]);
 
     return (
-        <div className='flex z-10 gap-[30%] items-start h-60 mb-40 w-screen fixed justify-between top-0 text-white px-1 py-1 overflow-x-hidden overflow-y-auto'>
+        <div className='flex z-10 gap-[30%] items-start h-60 mb-40 w-screen fixed justify-between top-0 text-white py-1 overflow-x-hidden overflow-y-auto'>
             <div className='w-screen bg-gradient-to-r from-blue-600 to-indigo-600 flex justify-between items-center shadow-lg top-0 fixed'>
-                <div className="logo w-40 ml-4 py-2"><img className='h-full w-full' src="./images/logo1.png" alt="Logo" /></div>
-
+            <div onClick={handleLogoclick} className="logo w-40 ml-4 py-2"><img className='h-full w-full' src="./images/logo1.png" alt="Logo" />
+</div>
                 <div className='flex sm:hidden text-[40px] justify-end mr-3 mb-4 cursor-pointer' onClick={() => setMenuBar(!menuBar)}>
                     {menuBar ? null : <HiBars3 />}
                 </div>

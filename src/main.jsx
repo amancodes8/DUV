@@ -15,6 +15,7 @@ import Facilities from './components/NavItems/Facilities';
 import Contacts from './components/NavItems/Contacts';
 import StudentERP from './components/StudentERP';
 import StudentsCorner from './components/NavItems/StudentsCorner';
+import UnderDevelopment from './components/NavItems/UnderDevelopment'; // Import the UnderDevelopment component
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,22 @@ const router = createBrowserRouter([
       {
         path: "/scorner",
         element: <StudentsCorner />
+      },
+      {
+        path: "/classes", 
+        element: <UnderDevelopment />
+      },
+      {
+        path: "/classes/math",
+        element: <UnderDevelopment /> 
+      },
+      {
+        path: "/classes/science",
+        element: <UnderDevelopment /> 
+      },
+      {
+        path: "/classes/history",
+        element: <UnderDevelopment /> 
       },
     ]
   }
