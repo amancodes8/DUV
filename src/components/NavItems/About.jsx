@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, Element } from 'react-scroll';
-import { FaSchool, FaUsers, FaStar, FaCode, FaGlobe } from 'react-icons/fa'; // Icons for section titles
+import { FaSchool, FaUsers, FaStar, FaCode, FaGlobe, FaBullseye } from 'react-icons/fa';
 
 const sections = [
   {
@@ -13,6 +13,11 @@ const sections = [
     title: "Our Vision",
     icon: <FaStar />,
     content: "At DUV International, we believe that education is the key to unlocking potential and shaping the leaders of tomorrow. Our vision is to provide a dynamic learning environment that fosters academic excellence, creativity, and character development, empowering students to become global citizens who can thrive in an ever-changing world."
+  },
+  {
+    title: "Our Mission", // New Mission Section
+    icon: <FaBullseye />,
+    content: "Our mission is to create an inclusive, compassionate, and innovative learning environment where every student feels valued and is encouraged to pursue their full potential. We strive to build responsible and confident individuals with the skills, knowledge, and attitudes to succeed in their personal and professional lives."
   },
   {
     title: "Technology-Driven Education",
@@ -33,7 +38,7 @@ const About = () => {
 
   return (
     <div className="bg-gradient-to-br from-blue-900 to-purple-900 p-8 mt-40 min-h-screen">
-      <h1 className="text-5xl text-center text-white mb-12 font-extrabold">About DUV International School</h1>
+      <h1 className="sm:text-5xl text-center text-white mb-12 font-extrabold text-xl">About DUV International School</h1>
 
       {/* Navigation Links */}
       <nav className="text-center mb-10">
@@ -42,7 +47,7 @@ const About = () => {
             key={index}
             to={`section-${index}`}
             smooth={true}
-            duration={500}
+            duration={800} // Smooth scroll duration
             className="text-white mx-3 p-2 transition-all hover:text-yellow-400 hover:underline"
           >
             {section.title}
@@ -56,9 +61,9 @@ const About = () => {
           <Element key={index} name={`section-${index}`}>
             <motion.div
               className="bg-gradient-to-r from-gray-900 to-gray-700 p-8 rounded-lg shadow-xl transition-transform hover:scale-105"
-              initial={{ opacity: 0, translateY: 50 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, translateY: 30 }} // Start slightly below
+              whileInView={{ opacity: 1, translateY: 0 }} // End position
+              transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }} // Smooth transition
               viewport={{ once: true }}
             >
               <div className="flex items-center mb-4">
@@ -72,8 +77,6 @@ const About = () => {
           </Element>
         ))}
       </div>
-
-
     </div>
   );
 };

@@ -24,7 +24,7 @@ const Login = () => {
 
   return (
     <div className="bg-slate-800 p-5 mt-20">
-      <h1 className="text-4xl text-center text-white mb-8">Login</h1>
+      <h1 className="text-4xl text-center text-white mb-8">Students Login</h1>
       <div className="max-w-md mx-auto bg-slate-900 p-6 rounded-lg shadow-lg">
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <form onSubmit={handleSubmit}>

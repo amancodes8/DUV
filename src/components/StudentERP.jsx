@@ -3,9 +3,8 @@ import React from 'react';
 const StudentERP = () => {
     // Sample student data
     const students = [
-        { id: 1, name: "John Doe", grade: "10", section: "A" },
-        { id: 2, name: "Jane Smith", grade: "11", section: "B" },
-        { id: 3, name: "Emily Johnson", grade: "12", section: "C" },
+        { id: 1, name: "Aman", grade: "10", section: "A" },
+       
     ];
 
     return (

@@ -23,65 +23,69 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/about",
-        element: <About />
-      },
-      {
-        path: "/home",
+        index: true, // This makes "/" render Home
         element: <Home />
       },
       {
-        path: "/login",
+        path: "about",
+        element: <About />
+      },
+      {
+        path: "login",
         element: <Login />
       },
       {
-        path: "/gallery",
+        path: "gallery",
         element: <Gallery />
       },
       {
-        path: "/blog",
+        path: "blog",
         element: <Blog />
       },
       {
-        path: "/news",
+        path: "news",
         element: <News />
       },
       {
-        path: "/facilities",
+        path: "facilities",
         element: <Facilities />
       },
       {
-        path: "/contacts",
+        path: "contacts",
         element: <Contacts />
       },
       {
-        path: "/admission",
+        path: "admission",
         element: <Admission />
       },
       {
-        path: "/studenterp",
+        path: "studenterp",
         element: <StudentERP />
       },
       {
-        path: "/scorner",
+        path: "scorner",
         element: <StudentsCorner />
       },
       {
-        path: "/classes", 
+        path: "classes", 
         element: <UnderDevelopment />
       },
       {
-        path: "/classes/math",
+        path: "classes/math",
         element: <UnderDevelopment /> 
       },
       {
-        path: "/classes/science",
+        path: "classes/science",
         element: <UnderDevelopment /> 
       },
       {
-        path: "/classes/history",
+        path: "classes/history",
         element: <UnderDevelopment /> 
       },
+      {
+        path: '/home',
+        element: <Home/>
+      }
     ]
   }
 ]);
