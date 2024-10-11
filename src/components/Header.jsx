@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { RxCross2 } from "react-icons/rx";
 import { HiBars3 } from "react-icons/hi2";
 import { gsap } from 'gsap';
-import { Navigate, NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Header() {
     const [menuBar, setMenuBar] = useState(false);
     const [isClassesHovered, setIsClassesHovered] = useState(false);
     const navigate = useNavigate();
 
-    function handleLogoclick(){{
-        navigate('/home')
-    }}
+    function handleLogoclick() {
+        navigate('/home');
+    }
 
     const navItems = [
         { label: 'Home', link: '/home' },
@@ -26,9 +26,9 @@ function Header() {
     ];
 
     const classItems = [
-        { label: 'Pre-Primary wing', link: '/classes/math' },
-        { label: 'Primary wing', link: '/classes/science' },
-        { label: 'Middle School', link: '/classes/history' },
+        { label: 'Pre-Primary wing', link: '/classes/preprimary' },
+        { label: 'Primary wing', link: '/classes/primary' },
+        { label: 'Middle School', link: '/classes/middle' },
     ];
 
     useEffect(() => {
@@ -72,10 +72,11 @@ function Header() {
     }, [menuBar]);
 
     return (
-        <div className='flex z-10 gap-[30%] items-start h-60 mb-40 w-screen fixed justify-between top-0 text-white py-1 overflow-x-hidden overflow-y-auto'>
+        <div className='flex z-10 gap-[30%] items-start h-20 mb-40 w-screen fixed justify-between top-0 text-white py-1 overflow-x-hidden overflow-y-auto'>
             <div className='w-screen bg-gradient-to-r from-blue-600 to-indigo-600 flex justify-between items-center shadow-lg top-0 fixed'>
-            <div onClick={handleLogoclick} className="logo w-40 ml-4 py-2"><img className='h-full w-full' src="./images/logo1.png" alt="Logo" />
-</div>
+                <div onClick={handleLogoclick} className="logo w-44 h-40 ml-0 py-2">
+                    <img className='h-full w-full' src="./images/logo1.png" alt="Logo" />
+                </div>
                 <div className='flex sm:hidden text-[40px] justify-end mr-3 mb-4 cursor-pointer' onClick={() => setMenuBar(!menuBar)}>
                     {menuBar ? null : <HiBars3 />}
                 </div>
@@ -90,15 +91,22 @@ function Header() {
                                 onMouseLeave={() => item.label === 'Classes' && setIsClassesHovered(false)}
                                 className="relative group"
                             >
-                                <NavLink
-                                    to={item.link}
-                                    className={({ isActive }) =>
-                                        isActive ? 'text-yellow-400' : 'text-white'
-                                    }
-                                    style={{ transition: 'color 0.3s ease' }}
-                                >
-                                    {item.label}
-                                </NavLink>
+                                {item.label === 'Classes' ? (
+                                    // Non-clickable span for "Classes"
+                                    <span className='text-white cursor-default'>
+                                        {item.label}
+                                    </span>
+                                ) : (
+                                    <NavLink
+                                        to={item.link}
+                                        className={({ isActive }) =>
+                                            isActive ? 'text-yellow-400' : 'text-white'
+                                        }
+                                        style={{ transition: 'color 0.3s ease' }}
+                                    >
+                                        {item.label}
+                                    </NavLink>
+                                )}
 
                                 {/* Classes Dropdown */}
                                 {item.label === 'Classes' && (

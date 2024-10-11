@@ -5,7 +5,7 @@ import Facilities from './Facilities'
 function StudentsCorner() {
     return (
         <div className='w-screen h-screen bg-slate-800 mt-40 no-scrollbar'>
-            <Login />
+            {/* <Login /> */}
             <Facilities />
 
 

@@ -7,6 +7,7 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { FaSchool } from "react-icons/fa6";
 import { FcProcess } from "react-icons/fc";
 import { MdOutlineSystemSecurityUpdateGood } from "react-icons/md";
+import ChatBot from './components/ChatBot';
 
 function Layout() {
     const [showBox, setShowBox] = useState(false);
@@ -109,6 +110,8 @@ function Layout() {
                     </div>
                 </div>
             )}
+
+            <ChatBot/>
         </div>
     );
 }

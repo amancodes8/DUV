@@ -3,15 +3,13 @@ import React, { useState } from 'react';
 const ChatBot = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
-    const [isOpen, setIsOpen] = useState(true); // State to manage chat visibility
+    const [isOpen, setIsOpen] = useState(false); 
 
     const handleSend = () => {
         if (!input) return;
 
-        // Add user message
         setMessages((prev) => [...prev, { text: input, sender: 'user' }]);
 
-        // Simulate bot response
         const botResponse = getBotResponse(input);
         setMessages((prev) => [...prev, { text: botResponse, sender: 'bot' }]);
         setInput('');
@@ -19,12 +17,26 @@ const ChatBot = () => {
 
     const getBotResponse = (query) => {
         const lowerQuery = query.toLowerCase();
-        if (lowerQuery.includes('admission')) return "You can find admission details on our Admission page.";
-        if (lowerQuery.includes('fees')) return "Please check the fee structure in the Admission section.";
-        if (lowerQuery.includes('curriculum')) return "We offer a holistic curriculum that includes academic and extracurricular activities.";
-        if (lowerQuery.includes('contact')) return "You can contact us via the 'Contact Us' page for any queries.";
+        
+        if (lowerQuery.includes('hi') || lowerQuery.includes('hello')) {
+            return "Welcome, How may I help you?";
+        }
+        if (lowerQuery.includes('admission')) {
+            return "You can find admission details on our Admission page.";
+        }
+        if (lowerQuery.includes('fees')) {
+            return "Please Contact us to Get fee details.";
+        }
+        if (lowerQuery.includes('curriculum')) {
+            return "We offer a holistic curriculum that includes academic and extracurricular activities.";
+        }
+        if (lowerQuery.includes('contact')) {
+            return "You can contact us via the 'Contact Us' page for any queries.";
+        }
+        
         return "I'm sorry, I don't have an answer for that. Please check our website for more details.";
     };
+    
 
     return (
         <div className={`fixed bottom-10 right-10 bg-white text-black shadow-lg rounded-lg w-full max-w-xs transition-transform ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}>
@@ -51,7 +63,7 @@ const ChatBot = () => {
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            className="border border-gray-300 rounded-l-lg p-2 flex-grow text-black"
+                            className="border w-full border-gray-300 rounded-l-lg p-2 flex-grow text-black"
                             placeholder="Type your message..."
                         />
                         <button

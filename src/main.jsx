@@ -15,7 +15,11 @@ import Facilities from './components/NavItems/Facilities';
 import Contacts from './components/NavItems/Contacts';
 import StudentERP from './components/StudentERP';
 import StudentsCorner from './components/NavItems/StudentsCorner';
-import UnderDevelopment from './components/NavItems/UnderDevelopment'; // Import the UnderDevelopment component
+import UnderDevelopment from './components/NavItems/UnderDevelopment';
+import PrePrimary from './components/NavItems/PrePrimary';
+import Primary from './components/NavItems/Primary';
+import Middle from './components/NavItems/Middle';
+ 
 
 const router = createBrowserRouter([
   {
@@ -68,19 +72,19 @@ const router = createBrowserRouter([
       },
       {
         path: "classes", 
-        element: <UnderDevelopment />
+        element: < UnderDevelopment/>
       },
       {
-        path: "classes/math",
-        element: <UnderDevelopment /> 
+        path: "classes/preprimary",
+        element: <PrePrimary /> 
       },
       {
-        path: "classes/science",
-        element: <UnderDevelopment /> 
+        path: "classes/primary",
+        element: <Primary /> 
       },
       {
-        path: "classes/history",
-        element: <UnderDevelopment /> 
+        path: "classes/middle",
+        element: <Middle /> 
       },
       {
         path: '/home',

@@ -14,7 +14,6 @@ const CalendarPage = () => {
         'July', 'August', 'September', 'October', 'November', 'December'
     ];
 
-    // Event details for October
     const events = [
         { date: new Date(currentYear, 9, 1), name: "Mid-Term Assessments", description: "Mid-term assessments for all grades." },
         { date: new Date(currentYear, 9, 2), name: "Gandhi Jayanti", description: "Celebration of Mahatma Gandhi's birthday." },
@@ -31,12 +30,9 @@ const CalendarPage = () => {
         { date: new Date(currentYear, 9, 31), name: "Diwali", description: "Festival of lights celebrated with great enthusiasm." },
     ];
 
-    // Get the first day of the current month
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
-    // Get the total number of days in the current month
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-    // Event handler for selecting a date
     const handleDateClick = (day) => {
         const selectedDate = new Date(currentYear, currentMonth, day);
         const event = events.find(

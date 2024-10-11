@@ -12,15 +12,7 @@ const admissionDetails = {
   details: "At DUV International School, we aim to provide a comprehensive admissions process to ensure that every applicant is given due consideration. We welcome applications from students of all backgrounds, and we encourage you to visit our campus to learn more about our programs and facilities."
 };
 
-const feeStructure = {
-  fees: [
-    { grade: "Nursery - KG2", fee: "INR 50,000/year" },
-    { grade: "Grade 1 - Grade 5", fee: "INR 60,000/year" },
-    { grade: "Grade 6 - Grade 8", fee: "INR 70,000/year" },
-    { grade: "Grade 9 - Grade 10", fee: "INR 80,000/year" },
-    { grade: "Grade 11 - Grade 12", fee: "INR 90,000/year" },
-  ]
-};
+
 
 const admissionProcess = [
   "Submit the online application form available on our website.",
@@ -42,7 +34,7 @@ const Admission = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setErrors({ ...errors, [name]: '' }); // Clear error on change
+    setErrors({ ...errors, [name]: '' }); 
   };
 
   const validateForm = () => {
@@ -64,7 +56,6 @@ const Admission = () => {
       setErrors(formErrors);
       return;
     }
-    // Add your form submission logic here (e.g., API call)
     setSubmitted(true);
     setFormData({ name: '', email: '', phone: '', enquiryType: '', message: '' }); // Reset form
   };
@@ -93,14 +84,9 @@ const Admission = () => {
         </ol>
       </div>
 
-      {/* Fee Structure Section */}
       <div className="mb-10 text-center">
-        <h2 className="text-2xl text-white">Fee Structure</h2>
-        <ul className="text-white mt-4">
-          {feeStructure.fees.map((feeItem, index) => (
-            <li key={index} className="mb-2">{feeItem.grade}: <span className="text-gray-400">{feeItem.fee}</span></li>
-          ))}
-        </ul>
+        <h2 className="text-xl text-white">Fee Structure</h2>
+        <h1 className='text-white text-2xl opacity-80'>Please Contact Us to get Fee details</h1>
       </div>
 
       {/* Admission Enquiry Form */}
