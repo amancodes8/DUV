@@ -61,13 +61,13 @@ const Admission = () => {
   };
 
   return (
-    <div className="bg-slate-800 p-5 mt-20 sm:mt-40">
-      <h1 className="text-4xl text-center text-white mt-8 mb-8">Admissions at DUV International School</h1>
+    <div className="bg-white text-black p-5 mt-20 sm:mt-40">
+      <h1 className="text-4xl text-center text-black mt-8 mb-8">Admissions at DUV International School</h1>
 
       {/* Key Dates Section */}
       <div className="mb-10 text-center">
         <h2 className="text-2xl text-white">Key Dates</h2>
-        <ul className="text-white mt-4">
+        <ul className="text-black mt-4">
           {admissionDetails.keyDates.map((item, index) => (
             <li key={index} className="mb-2">{item.event}: <span className="text-gray-400">{item.date}</span></li>
           ))}
@@ -76,8 +76,8 @@ const Admission = () => {
 
       {/* Admission Process Section */}
       <div className="mb-10 text-center">
-        <h2 className="text-2xl text-white">Admission Process</h2>
-        <ol className="text-white mt-4 list-decimal list-inside">
+        <h2 className="text-2xl text-black">Admission Process</h2>
+        <ol className="text-black mt-4 list-decimal list-inside">
           {admissionProcess.map((step, index) => (
             <li key={index} className="mb-2">{step}</li>
           ))}
@@ -86,7 +86,7 @@ const Admission = () => {
 
       <div className="mb-10 text-center">
         <h2 className="text-xl text-white">Fee Structure</h2>
-        <h1 className='text-white text-2xl opacity-80'>Please Contact Us to get Fee details</h1>
+        <h1 className='text-black text-2xl opacity-80'>Please Contact Us to get Fee details</h1>
       </div>
 
       {/* Admission Enquiry Form */}
@@ -97,7 +97,7 @@ const Admission = () => {
         transition={{ duration: 0.5 }}
         viewport={{ once: false }}
       >
-        <h2 className="text-xl text-white mb-4">Admission Enquiry Form</h2>
+        <h2 className="text-xl text-black mb-4">Admission Enquiry Form</h2>
         {submitted && <p className="text-green-500 mb-4">Your enquiry has been submitted successfully!</p>}
         <form onSubmit={handleSubmit}>
           <input
@@ -153,14 +153,14 @@ const Admission = () => {
           />
           {errors.message && <p className="text-red-500 mb-2">{errors.message}</p>}
 
-          <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded-md">Submit</button>
+          <button type="submit" className="w-full bg-blue-600 text-black p-2 rounded-md">Submit</button>
         </form>
       </motion.div>
 
 
       <div className="mt-10 text-center">
-        <h2 className="text-2xl text-white">Admission Details</h2>
-        <p className="text-white mt-4">{admissionDetails.details}</p>
+        <h2 className="text-2xl text-black">Admission Details</h2>
+        <p className="text-black mt-4">{admissionDetails.details}</p>
       </div>
     </div>
   );

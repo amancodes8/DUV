@@ -15,7 +15,7 @@ const sections = [
     content: "At DUV International, we believe that education is the key to unlocking potential and shaping the leaders of tomorrow. Our vision is to provide a dynamic learning environment that fosters academic excellence, creativity, and character development, empowering students to become global citizens who can thrive in an ever-changing world."
   },
   {
-    title: "Our Mission", // New Mission Section
+    title: "Our Mission", 
     icon: <FaBullseye />,
     content: "Our mission is to create an inclusive, compassionate, and innovative learning environment where every student feels valued and is encouraged to pursue their full potential. We strive to build responsible and confident individuals with the skills, knowledge, and attitudes to succeed in their personal and professional lives."
   },
@@ -37,8 +37,8 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-blue-900 p-8 mt-20 sm:mt-40 min-h-screen">
-      <h1 className="sm:text-5xl text-center text-white mb-12 font-extrabold mt-4 text-xl">About DUV International School</h1>
+    <div className="bg-white p-8 mt-20 sm:mt-40 min-h-screen">
+      <h1 className="sm:text-5xl text-center text-black mb-12 font-extrabold mt-4 text-xl">About DUV International School</h1>
 
       {/* Navigation Links */}
       <nav className="text-center mb-10">
@@ -48,7 +48,7 @@ const About = () => {
             to={`section-${index}`}
             smooth={true}
             duration={800} // Smooth scroll duration
-            className="text-white mx-3 p-2 transition-all hover:text-yellow-400 hover:underline"
+            className="text-black mx-3 p-2 transition-all hover:text-yellow-400 hover:underline"
           >
             {section.title}
           </Link>

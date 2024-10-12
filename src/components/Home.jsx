@@ -67,16 +67,16 @@ function Home() {
   };
 
   return (
-    <div className='w-screen h-fit py-10 mt-20 sm:mt-32 flex flex-col gap-10 px-10 justify-center overflow-x-hidden overflow-y-auto items-center text-white'>
+    <div className='w-screen h-fit py-10 mt-20 sm:mt-32 flex flex-col gap-10 px-10 justify-center overflow-x-hidden overflow-y-auto items-center bg-white'>
       {/* Hero Section */}
       <div className='relative w-screen h-[70vh] sm:h-screen flex flex-col items-center justify-center'>
         <img
           src={content[currentIndex].image}
           alt={`Slide ${currentIndex + 1}`}
           className={`w-full h-full rounded-md object-cover transition-opacity duration-500 ${fade ? 'fade-in' : 'fade'}`}
-          style={{ opacity: 0.6 }}
+          style={{ opacity: 0.8 }}
         />
-        <p className={`absolute leading-[60px] font-serif text-center shadow-lg transition-opacity duration-500 uppercase drop-shadow-lg ${fade ? 'fade-in' : 'fade'}`}>
+        <p className={`absolute leading-[60px] font-serif text-center  transition-opacity duration-500 uppercase  text-shadow text-white shadow-black  ${fade ? 'fade-in' : 'fade'}`}>
           {currentIndex === 1 ? (
             <span className="text-2xl sm:text-4xl">{content[currentIndex].text}</span>
           ) : (
@@ -99,15 +99,15 @@ function Home() {
 
       {/* Mission & Vision Section */}
       <div className='w-full text-center py-10'>
-        <h2 className='text-5xl mb-6 font-serif text-white drop-shadow-md'>OUR MISSION <span className='text-[60px]'>&</span> VISION</h2>
-        <div className='bg-gray-800 bg-opacity-60 p-6 rounded-xl shadow-lg'>
-          <p className='text-gray-300 text-2xl uppercase'>{missionVisionContent[currentMissionVisionIndex].text}</p>
-          <p className='text-gray-300 text-2xl uppercase'>{missionVisionContent[currentMissionVisionIndex].text2}</p>
+        <h2 className='sm:text-5xl text-3xl mb-6 font-serif text-black drop-shadow-md'>OUR MISSION <span className='text-[60px]'>&</span> VISION</h2>
+        <div className='bg-blue-900  p-6 rounded-xl shadow-lg'>
+          <p className='text-white text-2xl uppercase'>{missionVisionContent[currentMissionVisionIndex].text}</p>
+          <p className='text-white text-2xl uppercase'>{missionVisionContent[currentMissionVisionIndex].text2}</p>
         </div>
       </div>
 
       {/* Principal's and Director's Message Section */}
-      <div className='w-full flex flex-col lg:flex-row justify-between items-center text-white py-10 gap-4'>
+      <div className='w-full flex flex-col lg:flex-row justify-between items-center py-10 gap-4'>
         {/* Principal's Message */}
         <div className='flex flex-col lg:flex-row bg-blue-900 justify-center items-center px-2 border border-black p-2 rounded-lg shadow-xl'>
           <img
@@ -148,13 +148,13 @@ function Home() {
       </div>
 
       {/* Why Choose Us Section */}
-      <div className='w-full  py-10  overflow-hidden'>
-        <h2 className='text-5xl mb-6 font-serif text-white text-center drop-shadow-md'>WHY CHOOSE US?</h2>
-        <div className='bg-blue-900 bg-opacity-100 p-6 rounded-xl shadow-lg'>
+      <div className='w-full  py-10'>
+        <h2 className='text-5xl mb-6 font-serif text-black text-center drop-shadow-md'>WHY CHOOSE US?</h2>
+        <div className='bg-blue-900 p-6 rounded-xl shadow-lg'>
           <p className='text-lg text-white mb-4'>
             AT DUV INTERNATIONAL SCHOOL, WE FOCUS ON HOLISTIC DEVELOPMENT, BLENDING ACADEMICS WITH EXTRACURRICULAR ACTIVITIES.
           </p>
-          <ul className='list-disc list-inside text-lg text-white w-full flex flex-col sm:justify-center overflow-hidden'>
+          <ul className='list-disc list-inside text-lg text-white w-full'>
             <li>EXPERIENCED FACULTY</li>
             <li>MODERN INFRASTRUCTURE</li>
             <li>DIVERSE EXTRACURRICULAR ACTIVITIES</li>
@@ -166,7 +166,7 @@ function Home() {
 
       {/* Parent Testimonials Section */}
       <div className='w-full text-center py-10'>
-        <h2 className='sm:text-5xl text-3xl mb-6 font-serif text-white drop-shadow-md'>PARENT TESTIMONIALS</h2>
+        <h2 className='sm:text-5xl text-3xl mb-6 font-serif text-black drop-shadow-md'>PARENT TESTIMONIALS</h2>
         <div className='bg-blue-900  p-6 rounded-xl shadow-lg'>
           <p className='text-lg text-gray-300 mb-4'>
             "DUV INTERNATIONAL SCHOOL HAS TRANSFORMED OUR CHILD'S LEARNING EXPERIENCE!"
@@ -179,9 +179,9 @@ function Home() {
 
       {/* Contact Section */}
       <div className='w-full text-center py-10'>
-        <h2 className='text-5xl mb-6 font-serif text-white drop-shadow-md'>CONTACT US</h2>
-        <p className='text-lg text-gray-300'>
-          For admission inquiries, please contact us at: <span className='text-sky-400'>duvinternationalschool@gmail.com</span>
+        <h2 className='text-5xl mb-6 font-serif text-black drop-shadow-md'>CONTACT US</h2>
+        <p className='text-lg text-gray-600'>
+          For admission inquiries, please contact us at: <span className='text-sky-700'>duvinternationalschool@gmail.com</span>
         </p>
       </div>
     </div>

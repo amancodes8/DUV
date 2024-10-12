@@ -48,7 +48,7 @@ const facilities = [
 const Facilities = () => {
 
   return (
-    <div className="min-h-screen mt-8 overflow-x-hidden overflow-y-auto px-4 no-scrollbar bg-white">
+    <div className="min-h-screen mt-6 overflow-x-hidden overflow-y-auto px-4 no-scrollbar bg-white">
       <h1 className="text-4xl text-center text-black mb-8 mt-4">Facilities at DUV International School</h1>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

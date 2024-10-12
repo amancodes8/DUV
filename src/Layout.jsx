@@ -25,7 +25,7 @@ function Layout() {
     };
 
     return (
-        <div className='flex no-scrollbar flex-col bg-gray-900 w-screen h-fit min-h-screen overflow-x-hidden overflow-y-auto'>
+        <div className='flex no-scrollbar flex-col bg-white w-screen h-fit min-h-screen overflow-x-hidden overflow-y-auto'>
             <Header />
             <TransitionWrapper>
                 <Outlet />
