@@ -97,7 +97,7 @@ const Admission = () => {
         transition={{ duration: 0.5 }}
         viewport={{ once: false }}
       >
-        <h2 className="text-xl text-black mb-4">Admission Enquiry Form</h2>
+        <h2 className="text-xl text-white mb-4">Admission Enquiry Form</h2>
         {submitted && <p className="text-green-500 mb-4">Your enquiry has been submitted successfully!</p>}
         <form onSubmit={handleSubmit}>
           <input

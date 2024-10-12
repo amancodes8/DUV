@@ -99,7 +99,7 @@ function Home() {
 
       {/* Mission & Vision Section */}
       <div className='w-full text-center py-10'>
-        <h2 className='sm:text-5xl text-3xl mb-6 font-serif text-black drop-shadow-md'>OUR MISSION <span className='text-[60px]'>&</span> VISION</h2>
+        <h2 className='sm:text-5xl text-3xl mb-6 font-serif text-black drop-shadow-md'>OUR MISSION <span className='sm:text-[60px] text-[40px]'>&</span> VISION</h2>
         <div className='bg-blue-900  p-6 rounded-xl shadow-lg'>
           <p className='text-white text-2xl uppercase'>{missionVisionContent[currentMissionVisionIndex].text}</p>
           <p className='text-white text-2xl uppercase'>{missionVisionContent[currentMissionVisionIndex].text2}</p>
