@@ -4,11 +4,11 @@ import { MdCelebration } from 'react-icons/md';
 
 const CalendarPage = () => {
     const today = new Date();
-    const [currentMonth, setCurrentMonth] = useState(9); // October (0-indexed)
+    const [currentMonth, setCurrentMonth] = useState(9);
     const [currentYear, setCurrentYear] = useState(today.getFullYear());
     const [selectedEvent, setSelectedEvent] = useState(null);
 
-    // Define months
+    
     const months = [
         'January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'
@@ -28,7 +28,7 @@ const CalendarPage = () => {
         { date: new Date(currentYear, 9, 29), name: "Math Quiz Competition", description: "Math quiz competition for students." },
         { date: new Date(currentYear, 9, 30), name: "Sports Day", description: "Annual sports day with various competitions." },
         { date: new Date(currentYear, 9, 31), name: "Diwali", description: "Festival of lights celebrated with great enthusiasm." },
-    ];
+       ];
 
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
@@ -44,7 +44,6 @@ const CalendarPage = () => {
         setSelectedEvent(event || { name: 'No events', date: selectedDate, description: 'No events available for this date.' });
     };
 
-    // Change month
     const handlePrevMonth = () => {
         if (currentMonth === 0) {
             setCurrentMonth(11);
@@ -64,7 +63,7 @@ const CalendarPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-pink-100 to-blue-200 p-8">
+        <div className="min-h-screen p-8">
             <h1 className="text-center text-4xl mb-8 font-bold" style={{ fontFamily: "'Patrick Hand', cursive" }}>
                 School Events Calendar
             </h1>
@@ -96,14 +95,11 @@ const CalendarPage = () => {
                     ))}
                 </div>
 
-                {/* Calendar Days Grid */}
                 <div className="grid grid-cols-7 gap-4 text-center">
-                    {/* Empty boxes for the days before the first day of the month */}
                     {Array.from({ length: firstDayOfMonth }).map((_, idx) => (
                         <div key={idx} className="p-4"></div>
                     ))}
 
-                    {/* Display days */}
                     {Array.from({ length: daysInMonth }, (_, day) => (
                         <div
                             key={day}
@@ -128,7 +124,7 @@ const CalendarPage = () => {
                 </div>
             </div>
 
-            {/* Modal for displaying event details */}
+                    {/* Displaying Events */}
             {selectedEvent && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-8 rounded-lg text-center space-y-4">

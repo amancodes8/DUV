@@ -1,11 +1,9 @@
 import React from 'react'
-import Login from './Login'
 import Facilities from './Facilities'
 
 function StudentsCorner() {
     return (
-        <div className='w-screen h-screen bg-slate-800 mt-40 no-scrollbar'>
-            {/* <Login /> */}
+        <div className='w-screen h-screen bg-slate-800 mt-20 sm:mt-40 no-scrollbar'>
             <Facilities />
 
 

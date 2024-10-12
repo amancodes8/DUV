@@ -6,14 +6,12 @@ import './index.css';
 
 import About from './components/NavItems/About';
 import Home from './components/Home';
-import Login from './components/NavItems/Login';
 import Gallery from './components/NavItems/Gallery';
 import Admission from './components/NavItems/Admission';
 import Blog from './components/NavItems/Blog';
 import News from './components/NavItems/News';
 import Facilities from './components/NavItems/Facilities';
 import Contacts from './components/NavItems/Contacts';
-import StudentERP from './components/StudentERP';
 import StudentsCorner from './components/NavItems/StudentsCorner';
 import UnderDevelopment from './components/NavItems/UnderDevelopment';
 import PrePrimary from './components/NavItems/PrePrimary';
@@ -34,10 +32,7 @@ const router = createBrowserRouter([
         path: "about",
         element: <About />
       },
-      {
-        path: "login",
-        element: <Login />
-      },
+     
       {
         path: "gallery",
         element: <Gallery />
@@ -63,16 +58,12 @@ const router = createBrowserRouter([
         element: <Admission />
       },
       {
-        path: "studenterp",
-        element: <StudentERP />
-      },
-      {
         path: "scorner",
         element: <StudentsCorner />
       },
       {
         path: "classes", 
-        element: < UnderDevelopment/>
+        element: < PrePrimary/>
       },
       {
         path: "classes/preprimary",

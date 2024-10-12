@@ -61,8 +61,8 @@ const Admission = () => {
   };
 
   return (
-    <div className="bg-slate-800 p-5 mt-40">
-      <h1 className="text-4xl text-center text-white mb-8">Admissions at DUV International School</h1>
+    <div className="bg-slate-800 p-5 mt-20 sm:mt-40">
+      <h1 className="text-4xl text-center text-white mt-8 mb-8">Admissions at DUV International School</h1>
 
       {/* Key Dates Section */}
       <div className="mb-10 text-center">

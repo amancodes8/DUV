@@ -38,8 +38,8 @@ const News = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-5 mt-40">
-      <h1 className="text-4xl text-center text-white mb-8">Latest News at DUV International School</h1>
+    <div className="bg-white text-black p-5 mt-20 sm:mt-40">
+      <h1 className="text-4xl text-center text-gray-900 mt-4 mb-8">Latest News at DUV International School</h1>
 
       <nav className="text-center mb-5">
         {articles.map((article, index) => (
@@ -48,7 +48,7 @@ const News = () => {
             to={`article-${index}`}
             smooth={true}
             duration={500}
-            className="text-white mx-2 hover:underline"
+            className="text-gray-900 mx-2 hover:underline"
           >
             {article.title}
           </Link>
@@ -59,20 +59,22 @@ const News = () => {
         {articles.map((article, index) => (
           <Element key={index} name={`article-${index}`}>
             <motion.div
-              className="bg-white p-6 rounded-lg shadow-xl transform transition-transform hover:scale-105"
+              className="bg-blue-900  p-6 rounded-lg shadow-xl transform transition-transform hover:scale-105"
               initial={{ opacity: 0, translateY: 50 }}
               whileInView={{ opacity: 1, translateY: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: false }}
             >
-              <h2 className="text-xl text-gray-800 mb-2">{article.title}</h2>
-              <p className="text-gray-600 mb-4">{article.date}</p>
-              <p className="text-gray-700 text-lg">{article.content}</p>
+              <h2 className="text-xl text-white mb-2">{article.title}</h2>
+              <p className="text-gray-950 mb-4">{article.date}</p>
+              <p className="text-white text-lg">{article.content}</p>
             </motion.div>
           </Element>
         ))}
       </div>
-      <CalendarPage events={articles} />
+    <div className='mt-20'>
+    <CalendarPage events={articles} />
+    </div>
     </div>
   );
 }

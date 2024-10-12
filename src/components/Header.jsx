@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { RxCross2 } from "react-icons/rx";
 import { HiBars3 } from "react-icons/hi2";
 import { gsap } from 'gsap';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 
 function Header() {
     const [menuBar, setMenuBar] = useState(false);
     const [isClassesHovered, setIsClassesHovered] = useState(false);
+    const [isMobileClassesHovered, setIsMobileClassesHovered] = useState(false); // New state for mobile
     const navigate = useNavigate();
 
     function handleLogoclick() {
@@ -73,8 +74,8 @@ function Header() {
 
     return (
         <div className='flex z-10 gap-[30%] items-start h-20 mb-40 w-screen fixed justify-between top-0 text-white py-1 overflow-x-hidden overflow-y-auto'>
-            <div className='w-screen bg-gradient-to-r from-blue-600 to-indigo-600 flex justify-between items-center shadow-lg top-0 fixed'>
-                <div onClick={handleLogoclick} className="logo w-44 h-40 ml-0 py-2">
+            <div className='w-screen bg-gray-900 flex justify-between items-center shadow-lg top-0 fixed'>
+                <div onClick={handleLogoclick} className="logo sm:w-44 sm:h-40 h-28 w-32 ml- py-2">
                     <img className='h-full w-full' src="./images/logo1.png" alt="Logo" />
                 </div>
                 <div className='flex sm:hidden text-[40px] justify-end mr-3 mb-4 cursor-pointer' onClick={() => setMenuBar(!menuBar)}>
@@ -139,7 +140,13 @@ function Header() {
 
                 <ul className='space-y-4 mt-10 flex w-full justify-center flex-col items-center'>
                     {navItems.map((item, index) => (
-                        <li key={index} onClick={() => setMenuBar(!menuBar)}>
+                        <li key={index} onClick={() => {
+                            if (item.label === 'Classes') {
+                                setIsMobileClassesHovered(!isMobileClassesHovered);
+                            } else {
+                                setMenuBar(false); // Close the menu if another item is clicked
+                            }
+                        }}>
                             <NavLink
                                 to={item.link}
                                 className={({ isActive }) =>
@@ -149,6 +156,25 @@ function Header() {
                             >
                                 {item.label}
                             </NavLink>
+
+                            {/* Mobile Classes Dropdown */}
+                            {item.label === 'Classes' && isMobileClassesHovered && (
+                                <ul className="absolute left-0 mt-4 bg-gray-700 text-white p-2 w-52 rounded-lg shadow-md">
+                                    {classItems.map((subItem, subIndex) => (
+                                        <li key={subIndex} className="p-2 hover:bg-gray-800 rounded-lg">
+                                            <NavLink
+                                            onClick={() => setMenuBar(!menuBar)}
+                                                to={subItem.link}
+                                                className={({ isActive }) =>
+                                                    isActive ? 'text-yellow-400' : 'text-white'
+                                                }
+                                            >
+                                                {subItem.label}
+                                            </NavLink>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </li>
                     ))}
                 </ul>

@@ -22,9 +22,9 @@ const PrePrimary = () => {
   };
 
   return (
-   <div className='mt-40'>
+   <div className='mt-24 sm:mt-40'>
      <motion.div
-      className="p-6 bg-gradient-to-r from-green-100 via-yellow-100 to-green-50 min-h-screen mt-30"
+      className="p-6 bg-white min-h-screen mt-30"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

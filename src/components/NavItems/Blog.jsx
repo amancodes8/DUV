@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 
 const blogPosts = [
   {
@@ -36,10 +35,6 @@ const Blog = () => {
   // State to manage the expanded posts
   const [expandedPosts, setExpandedPosts] = useState({});
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   // Toggle the expanded state of each post
   const toggleReadMore = (index) => {
     setExpandedPosts((prev) => ({
@@ -49,20 +44,13 @@ const Blog = () => {
   };
 
   return (
-    <div className="bg-slate-800 p-5 mt-40">
-      <h1 className="text-4xl text-center text-white mb-8">Our Blog</h1>
+    <div className="bg-white w-screen mb-8 p-5 mt-24 sm:mt-40">
+      <h1 className="text-4xl text-center text-black mt-4 mb-8">Our Blog</h1>
 
       {/* Blog Section */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogPosts.map((post, index) => (
-          <motion.div
-            key={index}
-            className="bg-slate-900 p-6 rounded-lg shadow-lg text-white"
-            initial={{ opacity: 0, translateY: 50 }}
-            whileInView={{ opacity: 1, translateY: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: false }}
-          >
+          <div key={index} className="bg-blue-900 p-6 rounded-lg shadow-lg text-white">
             <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
             <p className="text-gray-400 text-sm mb-1">By {post.author} | {post.date}</p>
             <p className="text-gray-300 mb-4">{post.description}</p>
@@ -75,15 +63,15 @@ const Blog = () => {
             {/* Read More / Show Less Button */}
             <button
               onClick={() => toggleReadMore(index)}
-              className="text-blue-500 hover:text-blue-700 focus:outline-none"
+              className="text-black opacity-70 hover:opacity-100 focus:outline-none"
             >
               {expandedPosts[index] ? 'Show Less' : 'Read More'}
             </button>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default Blog;

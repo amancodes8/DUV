@@ -13,7 +13,7 @@ const events = [
 
 const Gallery = () => {
   return (
-    <div className="flex flex-wrap justify-center gap-10 p-2 sm:p-10 bg-slate-800 mt-28">
+    <div className="flex flex-wrap justify-center gap-10 p-2 sm:p-10 bg-slate-800 mt-28 sm:mt-40">
 
       {events.map((event) => (
         <div key={event.folder} className="w-1/4 p-2">

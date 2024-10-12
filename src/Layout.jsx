@@ -15,7 +15,7 @@ function Layout() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowBox(true);
-        }, 2000);
+        }, 5000);
 
         return () => clearTimeout(timer);
     }, []);
@@ -25,7 +25,7 @@ function Layout() {
     };
 
     return (
-        <div className='flex flex-col bg-slate-900 w-screen h-fit min-h-screen overflow-x-hidden overflow-y-auto'>
+        <div className='flex no-scrollbar flex-col bg-gray-900 w-screen h-fit min-h-screen overflow-x-hidden overflow-y-auto'>
             <Header />
             <TransitionWrapper>
                 <Outlet />
@@ -75,7 +75,7 @@ function Layout() {
                                     <label htmlFor="parentName" className="text-sm">Parent Name *</label>
                                     <input type="text" id="parentName" className="border p-2" placeholder="Parent Name" required />
                                 </div>
-                                <div className="flex flex-col">
+                                <div className="flex flex-col overflow-auto">
                                     <label htmlFor="phoneNumber" className="text-sm">Phone Number *</label>
                                     <div className="flex">
                                         <span className="bg-gray-200 p-2 border">+91</span>

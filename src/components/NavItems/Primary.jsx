@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 const Primary = () => {
   return (
-   <div className='mt-40'>
+   <div className='mt-24 sm:mt-40'>
  <motion.div
-      className="min-h-screen bg-gradient-to-r from-blue-100 to-pink-100 p-10"
+      className="min-h-screen bg-white p-10"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
@@ -13,7 +13,7 @@ const Primary = () => {
         <h1 className="text-4xl font-bold text-purple-700">
           Primary Classes Curriculum
         </h1>
-        <p className="mt-4 text-lg text-gray-700">
+        <p className="mt-4 text-lg text-gray-600">
           We at the Primary Wing believe that the mind, like a parachute, works best when opened.
         </p>
       </div>

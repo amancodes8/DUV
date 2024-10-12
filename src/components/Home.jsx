@@ -67,7 +67,7 @@ function Home() {
   };
 
   return (
-    <div className='w-screen h-fit py-10 mt-32 flex flex-col gap-10 px-10 justify-center overflow-x-hidden overflow-y-auto items-center text-white'>
+    <div className='w-screen h-fit py-10 mt-20 sm:mt-32 flex flex-col gap-10 px-10 justify-center overflow-x-hidden overflow-y-auto items-center text-white'>
       {/* Hero Section */}
       <div className='relative w-screen h-[70vh] sm:h-screen flex flex-col items-center justify-center'>
         <img
@@ -109,7 +109,7 @@ function Home() {
       {/* Principal's and Director's Message Section */}
       <div className='w-full flex flex-col lg:flex-row justify-between items-center text-white py-10 gap-4'>
         {/* Principal's Message */}
-        <div className='flex flex-col lg:flex-row bg-blue-600 justify-center items-center px-2 border border-black p-2 rounded-lg shadow-xl'>
+        <div className='flex flex-col lg:flex-row bg-blue-900 justify-center items-center px-2 border border-black p-2 rounded-lg shadow-xl'>
           <img
             src='./images/principal.jpeg'
             alt="Principal"
@@ -117,17 +117,17 @@ function Home() {
           />
           <div>
             <h3 className='text-3xl mb-4 text-center text-white font-semibold'>Principal's Message</h3>
-            <p className='text-lg text-white mb-4'>
+            <p className='text-lg text-center text-white mb-4'>
               "At DUV International School, we strive to create a nurturing environment that empowers students to grow academically and personally."
             </p>
-            <p className='text-lg text-white'>
+            <p className='text-lg text-white text-center '>
               "We believe in fostering creativity, critical thinking, and a love for learning in all our students."
             </p>
           </div>
         </div>
 
         {/* Director's Message */}
-        <div className='bg-blue-600 flex flex-col lg:flex-row justify-center items-center px-2 border border-black p-2 rounded-lg shadow-xl'>
+        <div className='bg-blue-900 flex flex-col lg:flex-row justify-center items-center px-2 border border-black p-2 rounded-lg shadow-xl'>
           <div className='lg:mr-6 lg:order-2'>
             <img
               src="./images/director.png"
@@ -137,10 +137,10 @@ function Home() {
           </div>
           <div className='lg:order-1'>
             <h3 className='text-3xl mb-4 text-center text-white font-semibold'>Director's Message</h3>
-            <p className='text-lg text-white mb-4'>
+            <p className='text-lg text-white mb-4 text-center'>
               "Our mission is to inspire and guide the next generation of leaders through holistic education."
             </p>
-            <p className='text-lg text-white'>
+            <p className='text-lg text-white text-center'>
               "We aim to be globally recognized as an institution that nurtures well-rounded individuals prepared for the challenges of tomorrow."
             </p>
           </div>
@@ -148,13 +148,13 @@ function Home() {
       </div>
 
       {/* Why Choose Us Section */}
-      <div className='w-full text-center py-10'>
-        <h2 className='text-5xl mb-6 font-serif text-white drop-shadow-md'>WHY CHOOSE US?</h2>
-        <div className='bg-gray-800 bg-opacity-60 p-6 rounded-xl shadow-lg'>
-          <p className='text-lg text-gray-300 mb-4'>
+      <div className='w-full  py-10  overflow-hidden'>
+        <h2 className='text-5xl mb-6 font-serif text-white text-center drop-shadow-md'>WHY CHOOSE US?</h2>
+        <div className='bg-blue-900 bg-opacity-100 p-6 rounded-xl shadow-lg'>
+          <p className='text-lg text-white mb-4'>
             AT DUV INTERNATIONAL SCHOOL, WE FOCUS ON HOLISTIC DEVELOPMENT, BLENDING ACADEMICS WITH EXTRACURRICULAR ACTIVITIES.
           </p>
-          <ul className='list-disc list-inside text-lg text-gray-300'>
+          <ul className='list-disc list-inside text-lg text-white w-full flex flex-col sm:justify-center overflow-hidden'>
             <li>EXPERIENCED FACULTY</li>
             <li>MODERN INFRASTRUCTURE</li>
             <li>DIVERSE EXTRACURRICULAR ACTIVITIES</li>
@@ -167,7 +167,7 @@ function Home() {
       {/* Parent Testimonials Section */}
       <div className='w-full text-center py-10'>
         <h2 className='sm:text-5xl text-3xl mb-6 font-serif text-white drop-shadow-md'>PARENT TESTIMONIALS</h2>
-        <div className='bg-gray-800 bg-opacity-60 p-6 rounded-xl shadow-lg'>
+        <div className='bg-blue-900  p-6 rounded-xl shadow-lg'>
           <p className='text-lg text-gray-300 mb-4'>
             "DUV INTERNATIONAL SCHOOL HAS TRANSFORMED OUR CHILD'S LEARNING EXPERIENCE!"
           </p>
@@ -181,7 +181,7 @@ function Home() {
       <div className='w-full text-center py-10'>
         <h2 className='text-5xl mb-6 font-serif text-white drop-shadow-md'>CONTACT US</h2>
         <p className='text-lg text-gray-300'>
-          For admission inquiries, please contact us at: <span className='text-sky-400'>admissions@duvinternationalschool.com</span>
+          For admission inquiries, please contact us at: <span className='text-sky-400'>duvinternationalschool@gmail.com</span>
         </p>
       </div>
     </div>

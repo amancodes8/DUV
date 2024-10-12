@@ -37,8 +37,8 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-blue-900 to-purple-900 p-8 mt-40 min-h-screen">
-      <h1 className="sm:text-5xl text-center text-white mb-12 font-extrabold text-xl">About DUV International School</h1>
+    <div className="bg-blue-900 p-8 mt-20 sm:mt-40 min-h-screen">
+      <h1 className="sm:text-5xl text-center text-white mb-12 font-extrabold mt-4 text-xl">About DUV International School</h1>
 
       {/* Navigation Links */}
       <nav className="text-center mb-10">
